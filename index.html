@@ -14,7 +14,6 @@
     
     <style>
         :root {
-            /* Paleta Clean / Marfim Médio da Imagem de Exemplo */
             --bg-body: #EFECE6;        /* Marfim Médio */
             --bg-card: #FAF8F5;        /* Marfim Claro */
             --bg-header: #E3DDD3;      /* Marfim Encorpado */
@@ -59,17 +58,30 @@
             padding: 12px 20px;
         }
 
+        /* LOGO SEVEN EMBUTIDO */
         .logo-box {
-            display: flex;
-            align-items: center;
             text-decoration: none;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
             cursor: pointer;
         }
 
-        .logo-img {
-            height: 48px;
-            width: auto;
-            object-fit: contain;
+        .logo-text {
+            font-size: 2.2rem;
+            font-weight: 800;
+            color: var(--primary);
+            letter-spacing: 2px;
+            line-height: 0.85;
+            text-transform: uppercase;
+        }
+
+        .logo-sub {
+            font-size: 0.65rem;
+            color: var(--text-dark);
+            letter-spacing: 3px;
+            font-weight: 600;
+            margin-top: 3px;
         }
 
         .nav-menu {
@@ -109,13 +121,14 @@
             background: var(--primary);
         }
 
-        /* HERO SECTION BANNER */
+        /* HERO BANNER COM A IMAGEM DA COZINHA */
         .hero {
-            margin-top: 72px;
+            margin-top: 70px;
             position: relative;
-            min-height: 500px;
-            background: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), 
-                        url('https://images.unsplash.com/photo-1584622650111-993a426fbf0a?q=80&w=1600&auto=format&fit=crop') center/cover no-repeat;
+            min-height: 520px;
+            /* Foto da cozinha em porcelanato enviada como fundo do banner */
+            background: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)), 
+                        url('https://images.unsplash.com/photo-1556911220-e15b29be8c8f?q=80&w=1600&auto=format&fit=crop') center/cover no-repeat;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -129,13 +142,13 @@
         }
 
         .hero h1 {
-            font-size: 2.2rem;
+            font-size: 2.1rem;
             font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 1.5px;
-            margin-bottom: 20px;
-            line-height: 1.3;
-            text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+            margin-bottom: 25px;
+            line-height: 1.35;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.6);
         }
 
         .btn-primary {
@@ -143,7 +156,7 @@
             background-color: transparent;
             color: #FFFFFF;
             border: 2px solid #FFFFFF;
-            padding: 12px 30px;
+            padding: 12px 32px;
             border-radius: 4px;
             text-decoration: none;
             font-weight: 700;
@@ -204,7 +217,7 @@
             border-color: var(--primary);
         }
 
-        /* GRID PORTFOLIO (ESTILO QUADRO MESA/EXEMPLO) */
+        /* GRID PORTFOLIO */
         .portfolio-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
@@ -227,10 +240,11 @@
 
         .card-img {
             width: 100%;
-            height: 250px;
+            height: 260px;
             object-fit: cover;
             cursor: pointer;
             display: block;
+            background-color: #e0e0e0;
         }
 
         .card-body {
@@ -259,7 +273,7 @@
             z-index: 10;
         }
 
-        /* SEÇÃO DE DIFERENCIAL & CONTATO */
+        /* DIFERENCIAL & CONTATO */
         .diferencial-box {
             background-color: var(--bg-card);
             border: 1px solid var(--border-color);
@@ -305,17 +319,6 @@
             font-size: 0.9rem;
         }
 
-        .contact-form-mini button {
-            background-color: var(--primary);
-            color: white;
-            border: none;
-            padding: 12px;
-            border-radius: 4px;
-            font-weight: 700;
-            cursor: pointer;
-            text-transform: uppercase;
-        }
-
         /* MODAL DE IMAGEM */
         .modal {
             display: none;
@@ -346,7 +349,7 @@
             cursor: pointer;
         }
 
-        /* PAINEL ADMIN MODAL */
+        /* PAINEL ADMIN MODAL COM UPLOAD DE ARQUIVO */
         .admin-panel {
             display: none;
             position: fixed;
@@ -371,23 +374,32 @@
         }
 
         .admin-content h3 {
-            margin-bottom: 20px;
+            margin-bottom: 15px;
             font-size: 1.2rem;
             text-transform: uppercase;
+        }
+
+        .admin-content label {
+            display: block;
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-top: 10px;
+            margin-bottom: 5px;
         }
 
         .admin-content input, .admin-content select {
             width: 100%;
             padding: 10px;
-            margin-bottom: 15px;
             border: 1px solid var(--border-color);
             border-radius: 4px;
+            background: #fff;
         }
 
         .admin-btns {
             display: flex;
             gap: 10px;
             justify-content: flex-end;
+            margin-top: 20px;
         }
 
         .btn-sec {
@@ -428,24 +440,23 @@
 </head>
 <body>
 
-    <!-- HEADER COM LOGO OFICIAL -->
+    <!-- HEADER COM LOGO SEVEN -->
     <header>
         <div class="nav-container">
             <a href="#" class="logo-box">
-                <!-- Logotipo Oficial SEVEN -->
-                <img src="image.png" alt="SEVEN Pias em porcelanato" class="logo-img">
+                <div class="logo-text">SEVEN</div>
+                <div class="logo-sub">Pias em porcelanato</div>
             </a>
             <ul class="nav-menu">
                 <li><a href="#inicio">Início</a></li>
-                <li><a href="#produtos">Produtos</a></li>
                 <li><a href="#trabalhos">Portfólio</a></li>
                 <li><a href="#contato">Contato</a></li>
             </ul>
-            <button class="admin-badge-btn" onclick="openAdminModal()"><i class="fas fa-lock"></i> Admin</button>
+            <button class="admin-badge-btn" onclick="openAdminModal()"><i class="fas fa-camera"></i> Admin</button>
         </div>
     </header>
 
-    <!-- BANNER PRINCIPAL -->
+    <!-- BANNER PRINCIPAL COM FOTO DA COZINHA -->
     <section class="hero" id="inicio">
         <div class="hero-content">
             <h1>PIAS E BANCADAS EXCLUSIVAS EM PORCELANATO.<br>ACABAMENTOS PREMIUM COM DESIGN SEVEN.</h1>
@@ -465,9 +476,9 @@
             <button class="filter-btn" onclick="filterCategory('cozinha')">Pias de Cozinha</button>
         </div>
 
-        <!-- GRID DE CARDS COM FOTOS REALMENTE CARREGADAS -->
+        <!-- GRID DE CARDS -->
         <div class="portfolio-grid" id="portfolioGrid">
-            <!-- Os cards serão alimentados via JS com as imagens do repositório/upload -->
+            <!-- As fotos enviadas via galeria aparecerão aqui -->
         </div>
     </section>
 
@@ -487,7 +498,7 @@
                     <input type="email" placeholder="Email">
                     <textarea rows="3" placeholder="Mensagem"></textarea>
                     <a href="https://wa.me/5511947764616?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20gostaria%20de%20fazer%20um%20or%C3%A7amento." target="_blank" style="text-decoration:none;">
-                        <button type="button" style="width:100%;">CONTATO VIA WHATSAPP</button>
+                        <button type="button" class="btn-primary" style="width:100%; background:var(--primary); border:none;">CONTATO VIA WHATSAPP</button>
                     </a>
                 </div>
             </div>
@@ -500,17 +511,18 @@
         <img id="modalImgTarget" src="" alt="Ampliação">
     </div>
 
-    <!-- PAINEL ADMINISTRADOR -->
+    <!-- PAINEL ADMINISTRADOR (COM UPLOAD DA GALERIA DO CELULAR) -->
     <div class="admin-panel" id="adminPanel">
         <div class="admin-content">
-            <h3>Adicionar Nova Foto ao Site</h3>
-            <label>Link ou Nome do Arquivo da Imagem:</label>
-            <input type="text" id="newImgUrl" placeholder="Ex: image_2.png ou link da imagem...">
+            <h3>Adicionar Foto da Galeria</h3>
             
-            <label>Título da Peça:</label>
-            <input type="text" id="newImgTitle" placeholder="Ex: Pia de Sobrepor Marmorizada">
+            <label>1. Escolha a foto do seu celular ou PC:</label>
+            <input type="file" id="fileInput" accept="image/*">
             
-            <label>Categoria:</label>
+            <label>2. Título do projeto:</label>
+            <input type="text" id="newImgTitle" placeholder="Ex: Lavatório Esculpido Cinza">
+            
+            <label>3. Categoria:</label>
             <select id="newImgCategory">
                 <option value="sobrepor">Bancada de Sobrepor</option>
                 <option value="esculpido">Lavatório Esculpido</option>
@@ -519,7 +531,7 @@
 
             <div class="admin-btns">
                 <button class="btn-sec" onclick="closeAdminModal()">Cancelar</button>
-                <button class="btn-primary" style="background:var(--primary); color:white;" onclick="addNewProject()">Salvar Foto</button>
+                <button class="btn-primary" style="background:var(--primary); color:white; border:none;" onclick="handleFileUpload()">Adicionar ao Site</button>
             </div>
         </div>
     </div>
@@ -536,20 +548,9 @@
         <i class="fab fa-whatsapp"></i>
     </a>
 
-    <!-- SCRIPTS -->
+    <!-- SCRIPTS DE FUNCIONAMENTO -->
     <script>
-        // Mapeamento inicial das fotos reais enviadas no projeto
-        const defaultProjects = [
-            { id: 1, title: "Pia bancada em porcelanato marmorizado", category: "sobrepor", img: "image_2.png" },
-            { id: 2, title: "Bancada branca com cuba de sobrepor", category: "sobrepor", img: "image_3.png" },
-            { id: 3, title: "Pia em porcelanato estilo vanity", category: "sobrepor", img: "image_4.png" },
-            { id: 4, title: "Bancada cinza com cuba quadrada", category: "sobrepor", img: "image_5.png" },
-            { id: 5, title: "Bancada de cozinha e ilha completa", category: "cozinha", img: "image_9.png" },
-            { id: 6, title: "Lavatório esculpido em porcelanato cinza", category: "esculpido", img: "image_10.png" },
-            { id: 7, title: "Lavatório esculpido suspenso preto", category: "esculpido", img: "image_13.png" }
-        ];
-
-        let projects = JSON.parse(localStorage.getItem('seven_projects')) || defaultProjects;
+        let projects = JSON.parse(localStorage.getItem('seven_projects')) || [];
         let isAdmin = false;
 
         function renderPortfolio(filter = 'todos') {
@@ -557,6 +558,11 @@
             grid.innerHTML = '';
 
             const filtered = filter === 'todos' ? projects : projects.filter(p => p.category === filter);
+
+            if (filtered.length === 0) {
+                grid.innerHTML = '<p style="text-align:center; grid-column: 1/-1; color: var(--text-muted); padding:30px;">Nenhuma foto adicionada ainda. Clique no botão <strong>Admin</strong> para enviar fotos da sua galeria!</p>';
+                return;
+            }
 
             filtered.forEach(p => {
                 const card = document.createElement('div');
@@ -588,7 +594,7 @@
         }
 
         function openAdminModal() {
-            const pass = prompt("Digite a senha do painel de administração:");
+            const pass = prompt("Digite a senha do painel:");
             if (pass === "1234" || pass === "seven") {
                 isAdmin = true;
                 document.getElementById('adminPanel').style.display = 'flex';
@@ -602,29 +608,47 @@
             document.getElementById('adminPanel').style.display = 'none';
         }
 
-        function addNewProject() {
-            const url = document.getElementById('newImgUrl').value;
+        // LEITURA DO ARQUIVO DA GALERIA DO CELULAR
+        function handleFileUpload() {
+            const fileInput = document.getElementById('fileInput');
             const title = document.getElementById('newImgTitle').value;
             const category = document.getElementById('newImgCategory').value;
 
-            if (!url || !title) {
-                alert("Por favor, preencha todos os campos!");
+            if (fileInput.files.length === 0 || !title) {
+                alert("Por favor, escolha uma imagem da sua galeria e digite um título!");
                 return;
             }
 
-            const newProj = { id: Date.now(), title, category, img: url };
-            projects.unshift(newProj);
-            localStorage.setItem('seven_projects', JSON.stringify(projects));
+            const file = fileInput.files[0];
+            const reader = new FileReader();
 
-            document.getElementById('newImgUrl').value = '';
-            document.getElementById('newImgTitle').value = '';
+            reader.onload = function(e) {
+                const base64Image = e.target.result;
+                
+                const newProj = {
+                    id: Date.now(),
+                    title: title,
+                    category: category,
+                    img: base64Image
+                };
 
-            closeAdminModal();
-            renderPortfolio();
+                projects.unshift(newProj);
+                localStorage.setItem('seven_projects', JSON.stringify(projects));
+
+                // Limpar inputs
+                fileInput.value = '';
+                document.getElementById('newImgTitle').value = '';
+
+                closeAdminModal();
+                renderPortfolio();
+                alert("Foto da galeria adicionada com sucesso!");
+            };
+
+            reader.readAsDataURL(file);
         }
 
         function deleteProject(id) {
-            if (confirm("Deseja apagar esta foto do portfólio?")) {
+            if (confirm("Deseja apagar esta foto do site?")) {
                 projects = projects.filter(p => p.id !== id);
                 localStorage.setItem('seven_projects', JSON.stringify(projects));
                 renderPortfolio();
