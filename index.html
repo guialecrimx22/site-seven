@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SEVEN - Pias em Porcelanato</title>
+    <title>SE7EN - Pias em Porcelanato</title>
     <meta name="description" content="PIAS E BANCADAS EXCLUSIVAS EM PORCELANATO. ACABAMENTOS PREMIUM COM DESIGN SEVEN.">
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -17,12 +17,13 @@
             --bg-body: #EFECE6;        /* Marfim Médio */
             --bg-card: #FAF8F5;        /* Marfim Claro */
             --bg-header: #E3DDD3;      /* Marfim Encorpado */
-            --primary: #5cb3b3;        /* Cor Turquesa Original do Logo SEVEN */
+            --primary: #5cb3b3;        /* Turquesa SEVEN */
             --primary-hover: #489a9a;
             --text-dark: #212121;
             --text-muted: #666666;
             --border-color: #DCD6CD;
             --shadow: 0 10px 25px rgba(0,0,0,0.06);
+            --star-color: #f39c12;
         }
 
         * {
@@ -37,9 +38,10 @@
             background-color: var(--bg-body);
             color: var(--text-dark);
             line-height: 1.6;
+            overflow-x: hidden;
         }
 
-        /* HEADER */
+        /* HEADER RESPONSIVO */
         header {
             background-color: var(--bg-header);
             position: fixed;
@@ -58,7 +60,6 @@
             padding: 12px 20px;
         }
 
-        /* LOGO SEVEN EMBUTIDO */
         .logo-box {
             text-decoration: none;
             display: flex;
@@ -68,7 +69,7 @@
         }
 
         .logo-text {
-            font-size: 2.2rem;
+            font-size: clamp(1.6rem, 4vw, 2.2rem);
             font-weight: 800;
             color: var(--primary);
             letter-spacing: 2px;
@@ -77,7 +78,7 @@
         }
 
         .logo-sub {
-            font-size: 0.65rem;
+            font-size: clamp(0.55rem, 1.5vw, 0.65rem);
             color: var(--text-dark);
             letter-spacing: 3px;
             font-weight: 600;
@@ -87,7 +88,7 @@
         .nav-menu {
             display: flex;
             list-style: none;
-            gap: 25px;
+            gap: 20px;
             align-items: center;
         }
 
@@ -109,43 +110,74 @@
             background: var(--text-dark);
             color: #fff;
             border: none;
-            padding: 7px 14px;
+            padding: 8px 14px;
             border-radius: 4px;
             font-size: 0.75rem;
             cursor: pointer;
             font-weight: 600;
             transition: background 0.3s;
+            display: flex;
+            align-items: center;
+            gap: 6px;
         }
 
         .admin-badge-btn:hover {
             background: var(--primary);
         }
 
-        /* HERO BANNER COM A IMAGEM DA COZINHA */
+        .menu-toggle {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--text-dark);
+        }
+
+        /* HERO BANNER */
         .hero {
-            margin-top: 70px;
+            margin-top: 65px;
             position: relative;
-            min-height: 520px;
-            /* Foto da cozinha em porcelanato enviada como fundo do banner */
-            background: linear-gradient(rgba(0, 0, 0, 0.55), rgba(0, 0, 0, 0.55)), 
-                        url('https://images.unsplash.com/photo-1556911220-e15b29be8c8f?q=80&w=1600&auto=format&fit=crop') center/cover no-repeat;
+            min-height: clamp(380px, 65vh, 550px);
             display: flex;
             align-items: center;
             justify-content: center;
             text-align: center;
             padding: 40px 20px;
             color: #FFFFFF;
+            overflow: hidden;
+        }
+
+        .hero-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            z-index: 1;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.55);
+            z-index: 2;
         }
 
         .hero-content {
+            position: relative;
+            z-index: 3;
             max-width: 850px;
         }
 
         .hero h1 {
-            font-size: 2.1rem;
+            font-size: clamp(1.3rem, 3.5vw, 2.1rem);
             font-weight: 700;
             text-transform: uppercase;
-            letter-spacing: 1.5px;
+            letter-spacing: 1px;
             margin-bottom: 25px;
             line-height: 1.35;
             text-shadow: 0 2px 10px rgba(0,0,0,0.6);
@@ -163,6 +195,7 @@
             text-transform: uppercase;
             letter-spacing: 1px;
             transition: all 0.3s ease;
+            cursor: pointer;
         }
 
         .btn-primary:hover {
@@ -172,16 +205,16 @@
             transform: translateY(-2px);
         }
 
-        /* PORTFÓLIO SECTION */
+        /* SEÇÕES GERAIS */
         .section-container {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 50px 20px;
+            padding: clamp(30px, 5vw, 60px) 20px;
         }
 
         .section-title {
             text-align: center;
-            font-size: 1.8rem;
+            font-size: clamp(1.4rem, 3vw, 1.8rem);
             text-transform: uppercase;
             letter-spacing: 2px;
             margin-bottom: 25px;
@@ -201,7 +234,7 @@
             background-color: var(--bg-card);
             border: 1px solid var(--border-color);
             color: var(--text-dark);
-            padding: 8px 20px;
+            padding: 8px 18px;
             border-radius: 20px;
             font-size: 0.8rem;
             font-weight: 700;
@@ -220,8 +253,8 @@
         /* GRID PORTFOLIO */
         .portfolio-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 25px;
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            gap: 20px;
         }
 
         .card {
@@ -240,7 +273,7 @@
 
         .card-img {
             width: 100%;
-            height: 260px;
+            height: 250px;
             object-fit: cover;
             cursor: pointer;
             display: block;
@@ -258,7 +291,7 @@
             color: var(--text-dark);
         }
 
-        .delete-card-btn {
+        .delete-btn {
             position: absolute;
             top: 10px;
             right: 10px;
@@ -273,49 +306,92 @@
             z-index: 10;
         }
 
-        /* DIFERENCIAL & CONTATO */
-        .diferencial-box {
+        /* SEÇÃO DE FEEDBACKS / AVALIAÇÕES REAIS */
+        .feedback-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 25px;
+            margin-bottom: 40px;
+        }
+
+        .feedback-card {
             background-color: var(--bg-card);
             border: 1px solid var(--border-color);
-            border-radius: 8px;
-            padding: 40px 20px;
-            margin-top: 20px;
-        }
-
-        .diferencial-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 30px;
-            align-items: center;
-        }
-
-        .testimonial {
-            font-style: italic;
-            color: var(--text-muted);
-            text-align: center;
+            border-radius: 12px;
             padding: 20px;
-        }
-
-        .testimonial span {
-            display: block;
-            margin-top: 10px;
-            font-weight: 700;
-            font-style: normal;
-            color: var(--text-dark);
-        }
-
-        .contact-form-mini {
+            box-shadow: var(--shadow);
+            position: relative;
             display: flex;
             flex-direction: column;
-            gap: 12px;
+            justify-content: space-between;
         }
 
-        .contact-form-mini input, .contact-form-mini textarea {
+        .feedback-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 12px;
+        }
+
+        .feedback-author {
+            font-weight: 700;
+            font-size: 0.95rem;
+        }
+
+        .feedback-stars {
+            color: var(--star-color);
+            font-size: 0.85rem;
+        }
+
+        .feedback-comment {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            margin-bottom: 15px;
+            font-style: italic;
+        }
+
+        .feedback-img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 8px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        .feedback-form-box {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 30px 20px;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .feedback-form-box h3 {
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+            text-transform: uppercase;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: 600;
+            font-size: 0.85rem;
+            margin-bottom: 5px;
+        }
+
+        .form-group input, .form-group textarea, .form-group select {
             width: 100%;
             padding: 10px;
             border: 1px solid var(--border-color);
             border-radius: 4px;
-            background-color: #FFF;
+            background: #fff;
             font-size: 0.9rem;
         }
 
@@ -335,21 +411,22 @@
         }
 
         .modal img {
-            max-width: 90%;
+            max-width: 95%;
             max-height: 85vh;
             border-radius: 6px;
+            object-fit: contain;
         }
 
         .modal-close {
             position: absolute;
             top: 20px;
-            right: 30px;
+            right: 25px;
             color: white;
             font-size: 35px;
             cursor: pointer;
         }
 
-        /* PAINEL ADMIN MODAL COM UPLOAD DE ARQUIVO */
+        /* PAINEL ADMIN MODAL */
         .admin-panel {
             display: none;
             position: fixed;
@@ -357,56 +434,49 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0,0,0,0.7);
+            background: rgba(0,0,0,0.75);
             z-index: 3000;
             justify-content: center;
             align-items: center;
-            padding: 20px;
+            padding: 15px;
+            overflow-y: auto;
         }
 
         .admin-content {
             background: var(--bg-card);
-            padding: 30px;
+            padding: 25px;
             border-radius: 8px;
             max-width: 500px;
             width: 100%;
             border: 1px solid var(--border-color);
+            max-height: 90vh;
+            overflow-y: auto;
         }
 
         .admin-content h3 {
             margin-bottom: 15px;
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             text-transform: uppercase;
+            border-bottom: 2px solid var(--primary);
+            padding-bottom: 5px;
         }
 
-        .admin-content label {
-            display: block;
-            font-size: 0.85rem;
-            font-weight: 600;
-            margin-top: 10px;
-            margin-bottom: 5px;
-        }
-
-        .admin-content input, .admin-content select {
-            width: 100%;
-            padding: 10px;
-            border: 1px solid var(--border-color);
-            border-radius: 4px;
-            background: #fff;
+        .admin-section {
+            margin-bottom: 25px;
         }
 
         .admin-btns {
             display: flex;
             gap: 10px;
             justify-content: flex-end;
-            margin-top: 20px;
+            margin-top: 15px;
         }
 
         .btn-sec {
             background: #888;
             color: white;
             border: none;
-            padding: 10px 20px;
+            padding: 10px 18px;
             border-radius: 4px;
             cursor: pointer;
         }
@@ -415,60 +485,94 @@
         footer {
             background-color: var(--bg-header);
             border-top: 1px solid var(--border-color);
-            padding: 40px 20px 20px;
+            padding: 30px 20px 20px;
             text-align: center;
         }
 
         .whatsapp-float {
             position: fixed;
-            bottom: 25px;
-            right: 25px;
+            bottom: 20px;
+            right: 20px;
             background-color: #25d366;
             color: #FFF;
-            width: 60px;
-            height: 60px;
+            width: 55px;
+            height: 55px;
             border-radius: 50%;
             display: flex;
             justify-content: center;
             align-items: center;
-            font-size: 30px;
+            font-size: 28px;
             box-shadow: 0 4px 15px rgba(0,0,0,0.2);
             text-decoration: none;
             z-index: 1001;
+        }
+
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: block;
+            }
+
+            .nav-menu {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background-color: var(--bg-header);
+                flex-direction: column;
+                padding: 20px;
+                border-bottom: 1px solid var(--border-color);
+            }
+
+            .nav-menu.active {
+                display: flex;
+            }
+
+            .portfolio-grid, .feedback-grid {
+                grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            }
         }
     </style>
 </head>
 <body>
 
-    <!-- HEADER COM LOGO SEVEN -->
+    <!-- HEADER -->
     <header>
         <div class="nav-container">
             <a href="#" class="logo-box">
                 <div class="logo-text">SEVEN</div>
                 <div class="logo-sub">Pias em porcelanato</div>
             </a>
-            <ul class="nav-menu">
-                <li><a href="#inicio">Início</a></li>
-                <li><a href="#trabalhos">Portfólio</a></li>
-                <li><a href="#contato">Contato</a></li>
+            
+            <div class="menu-toggle" onclick="toggleMenu()">
+                <i class="fas fa-bars"></i>
+            </div>
+
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#inicio" onclick="toggleMenu()">Início</a></li>
+                <li><a href="#trabalhos" onclick="toggleMenu()">Portfólio</a></li>
+                <li><a href="#feedbacks" onclick="toggleMenu()">Avaliações</a></li>
+                <li><a href="#contato" onclick="toggleMenu()">Contato</a></li>
             </ul>
-            <button class="admin-badge-btn" onclick="openAdminModal()"><i class="fas fa-camera"></i> Admin</button>
+
+            <button class="admin-badge-btn" onclick="openAdminModal()"><i class="fas fa-cog"></i> Admin</button>
         </div>
     </header>
 
-    <!-- BANNER PRINCIPAL COM FOTO DA COZINHA -->
+    <!-- BANNER PRINCIPAL -->
     <section class="hero" id="inicio">
+        <img id="heroBgImg" class="hero-bg" src="https://images.unsplash.com/photo-1556911220-e15b29be8c8f?q=80&w=1600&auto=format&fit=crop" alt="Banner SEVEN">
+        <div class="hero-overlay"></div>
         <div class="hero-content">
             <h1>PIAS E BANCADAS EXCLUSIVAS EM PORCELANATO.<br>ACABAMENTOS PREMIUM COM DESIGN SEVEN.</h1>
             <a href="https://wa.me/5511947764616?text=Ol%C3%A1!%20Gostaria%20de%20fazer%20um%20or%C3%A7amento." target="_blank" class="btn-primary">VER PRODUTOS</a>
         </div>
     </section>
 
-    <!-- NOSSO TRABALHO -->
+    <!-- NOSSO TRABALHO (PORTFÓLIO) -->
     <section class="section-container" id="trabalhos">
         <h2 class="section-title">NOSSO TRABALHO</h2>
 
-        <!-- FILTROS -->
         <div class="filter-buttons">
             <button class="filter-btn active" onclick="filterCategory('todos')">Todos</button>
             <button class="filter-btn" onclick="filterCategory('sobrepor')">Bancadas de Sobrepor</button>
@@ -476,62 +580,94 @@
             <button class="filter-btn" onclick="filterCategory('cozinha')">Pias de Cozinha</button>
         </div>
 
-        <!-- GRID DE CARDS -->
-        <div class="portfolio-grid" id="portfolioGrid">
-            <!-- As fotos enviadas via galeria aparecerão aqui -->
-        </div>
+        <div class="portfolio-grid" id="portfolioGrid"></div>
     </section>
 
-    <!-- DIFERENCIAL & CONTATO -->
-    <section class="section-container" id="contato">
-        <h2 class="section-title">NOSSO DIFERENCIAL & FALE CONOSCO</h2>
-        
-        <div class="diferencial-box">
-            <div class="diferencial-grid">
-                <div class="testimonial">
-                    "Excelente acabamento e precisão, superou nossas expectativas."
-                    <span>- Fernanda R.</span>
-                </div>
+    <!-- AVALIAÇÕES E FEEDBACKS REAIS -->
+    <section class="section-container" id="feedbacks">
+        <h2 class="section-title">O QUE NOSSOS CLIENTES DIZEM</h2>
 
-                <div class="contact-form-mini">
-                    <input type="text" placeholder="Nome">
-                    <input type="email" placeholder="Email">
-                    <textarea rows="3" placeholder="Mensagem"></textarea>
-                    <a href="https://wa.me/5511947764616?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20gostaria%20de%20fazer%20um%20or%C3%A7amento." target="_blank" style="text-decoration:none;">
-                        <button type="button" class="btn-primary" style="width:100%; background:var(--primary); border:none;">CONTATO VIA WHATSAPP</button>
-                    </a>
-                </div>
+        <!-- LISTA DE AVALIAÇÕES REAIS -->
+        <div class="feedback-grid" id="feedbackGrid"></div>
+
+        <!-- FORMULÁRIO PARA O CLIENTE ENVIAR AVALIAÇÃO + FOTO -->
+        <div class="feedback-form-box">
+            <h3>Deixe seu Feedback sobre nosso Trabalho</h3>
+            
+            <div class="form-group">
+                <label>Seu Nome:</label>
+                <input type="text" id="fbAuthor" placeholder="Ex: Fernanda R.">
             </div>
+
+            <div class="form-group">
+                <label>Avaliação (Estrelas):</label>
+                <select id="fbStars">
+                    <option value="5">★★★★★ (5/5 estrelas)</option>
+                    <option value="4">★★★★☆ (4/5 estrelas)</option>
+                    <option value="3">★★★☆☆ (3/5 estrelas)</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>Seu Comentário:</label>
+                <textarea id="fbComment" rows="3" placeholder="Conte como ficou a sua pia ou bancada em porcelanato..."></textarea>
+            </div>
+
+            <div class="form-group">
+                <label>Anexar Foto do Projeto Instalado (Opcional):</label>
+                <input type="file" id="fbFileInput" accept="image/*">
+            </div>
+
+            <button type="button" class="btn-primary" style="background:var(--primary); border:none; width:100%;" onclick="submitFeedback()">PUBLICAR AVALIAÇÃO</button>
         </div>
     </section>
 
-    <!-- MODAL DE VISUALIZAÇÃO DE FOTO -->
+    <!-- FALE CONOSCO -->
+    <section class="section-container" id="contato">
+        <h2 class="section-title">FALE CONOSCO</h2>
+        <div style="text-align: center; max-width: 600px; margin: 0 auto;">
+            <p style="margin-bottom: 20px; color: var(--text-muted);">Entre em contato direto pelo WhatsApp para solicitar um orçamento sob medida para o seu ambiente.</p>
+            <a href="https://wa.me/5511947764616?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20gostaria%20de%20fazer%20um%20or%C3%A7amento." target="_blank" class="btn-primary" style="background:var(--primary); border:none;">FALAR NO WHATSAPP (11) 94776-4616</a>
+        </div>
+    </section>
+
+    <!-- MODAL DE IMAGEM -->
     <div class="modal" id="imageModal" onclick="closeImageModal()">
         <span class="modal-close">&times;</span>
         <img id="modalImgTarget" src="" alt="Ampliação">
     </div>
 
-    <!-- PAINEL ADMINISTRADOR (COM UPLOAD DA GALERIA DO CELULAR) -->
+    <!-- PAINEL ADMINISTRADOR (GERENCIAR TUDO) -->
     <div class="admin-panel" id="adminPanel">
         <div class="admin-content">
-            <h3>Adicionar Foto da Galeria</h3>
             
-            <label>1. Escolha a foto do seu celular ou PC:</label>
-            <input type="file" id="fileInput" accept="image/*">
-            
-            <label>2. Título do projeto:</label>
-            <input type="text" id="newImgTitle" placeholder="Ex: Lavatório Esculpido Cinza">
-            
-            <label>3. Categoria:</label>
-            <select id="newImgCategory">
-                <option value="sobrepor">Bancada de Sobrepor</option>
-                <option value="esculpido">Lavatório Esculpido</option>
-                <option value="cozinha">Pia de Cozinha</option>
-            </select>
+            <div class="admin-section">
+                <h3>1. Alterar Foto do Banner</h3>
+                <label>Escolha uma foto para o Banner:</label>
+                <input type="file" id="bannerFileInput" accept="image/*">
+                <button class="btn-primary" style="background:var(--primary); color:white; border:none; width:100%; margin-top:10px;" onclick="handleBannerUpload()">Atualizar Banner</button>
+            </div>
 
-            <div class="admin-btns">
-                <button class="btn-sec" onclick="closeAdminModal()">Cancelar</button>
-                <button class="btn-primary" style="background:var(--primary); color:white; border:none;" onclick="handleFileUpload()">Adicionar ao Site</button>
+            <div class="admin-section">
+                <h3>2. Adicionar Foto ao Portfólio</h3>
+                <label>Foto do projeto:</label>
+                <input type="file" id="fileInput" accept="image/*">
+                
+                <label>Título:</label>
+                <input type="text" id="newImgTitle" placeholder="Ex: Lavatório Esculpido Cinza">
+                
+                <label>Categoria:</label>
+                <select id="newImgCategory">
+                    <option value="sobrepor">Bancada de Sobrepor</option>
+                    <option value="esculpido">Lavatório Esculpido</option>
+                    <option value="cozinha">Pia de Cozinha</option>
+                </select>
+
+                <button class="btn-primary" style="background:var(--primary); color:white; border:none; width:100%; margin-top:10px;" onclick="handleFileUpload()">Adicionar ao Portfólio</button>
+            </div>
+
+            <div style="text-align: right;">
+                <button class="btn-sec" onclick="closeAdminModal()">Fechar Painel</button>
             </div>
         </div>
     </div>
@@ -543,16 +679,38 @@
         </p>
     </footer>
 
-    <!-- BOTÃO WHATSAPP FLUTUANTE -->
+    <!-- BOTÃO WHATSAPP -->
     <a href="https://wa.me/5511947764616?text=Ol%C3%A1!%20Gostaria%20de%20fazer%20um%20or%C3%A7amento." class="whatsapp-float" target="_blank">
         <i class="fab fa-whatsapp"></i>
     </a>
 
-    <!-- SCRIPTS DE FUNCIONAMENTO -->
+    <!-- SCRIPTS -->
     <script>
         let projects = JSON.parse(localStorage.getItem('seven_projects')) || [];
+        let feedbacks = JSON.parse(localStorage.getItem('seven_feedbacks')) || [
+            {
+                id: 1,
+                author: "Fernanda R.",
+                stars: 5,
+                comment: "Excelente acabamento e precisão, superou nossas expectativas no projeto da bancada da cozinha!",
+                img: ""
+            }
+        ];
+        let storedBanner = localStorage.getItem('seven_banner');
         let isAdmin = false;
 
+        if (storedBanner) {
+            document.getElementById('heroBgImg').src = storedBanner;
+        }
+
+        function toggleMenu() {
+            const nav = document.getElementById('navMenu');
+            if (window.innerWidth <= 768) {
+                nav.classList.toggle('active');
+            }
+        }
+
+        // RENDERIZAR PORTFÓLIO
         function renderPortfolio(filter = 'todos') {
             const grid = document.getElementById('portfolioGrid');
             grid.innerHTML = '';
@@ -560,7 +718,7 @@
             const filtered = filter === 'todos' ? projects : projects.filter(p => p.category === filter);
 
             if (filtered.length === 0) {
-                grid.innerHTML = '<p style="text-align:center; grid-column: 1/-1; color: var(--text-muted); padding:30px;">Nenhuma foto adicionada ainda. Clique no botão <strong>Admin</strong> para enviar fotos da sua galeria!</p>';
+                grid.innerHTML = '<p style="text-align:center; grid-column: 1/-1; color: var(--text-muted); padding:20px;">Nenhuma foto adicionada no portfólio.</p>';
                 return;
             }
 
@@ -568,11 +726,40 @@
                 const card = document.createElement('div');
                 card.className = 'card';
                 card.innerHTML = `
-                    ${isAdmin ? `<button class="delete-card-btn" style="display:block;" onclick="deleteProject(${p.id})"><i class="fas fa-trash"></i> Excluir</button>` : ''}
+                    ${isAdmin ? `<button class="delete-btn" style="display:block;" onclick="deleteProject(${p.id})"><i class="fas fa-trash"></i> Excluir</button>` : ''}
                     <img src="${p.img}" class="card-img" alt="${p.title}" onclick="openImageModal('${p.img}')">
                     <div class="card-body">
                         <h4 class="card-title">${p.title}</h4>
                     </div>
+                `;
+                grid.appendChild(card);
+            });
+        }
+
+        // RENDERIZAR AVALIAÇÕES REAIS
+        function renderFeedbacks() {
+            const grid = document.getElementById('feedbackGrid');
+            grid.innerHTML = '';
+
+            if (feedbacks.length === 0) {
+                grid.innerHTML = '<p style="text-align:center; grid-column: 1/-1; color: var(--text-muted); padding:20px;">Seja o primeiro cliente a deixar uma avaliação abaixo!</p>';
+                return;
+            }
+
+            feedbacks.forEach(f => {
+                const starsHtml = '★'.repeat(f.stars) + '☆'.repeat(5 - f.stars);
+                const card = document.createElement('div');
+                card.className = 'feedback-card';
+                card.innerHTML = `
+                    ${isAdmin ? `<button class="delete-btn" style="display:block;" onclick="deleteFeedback(${f.id})"><i class="fas fa-trash"></i> Excluir</button>` : ''}
+                    <div>
+                        <div class="feedback-header">
+                            <span class="feedback-author">${f.author}</span>
+                            <span class="feedback-stars">${starsHtml}</span>
+                        </div>
+                        <p class="feedback-comment">"${f.comment}"</p>
+                    </div>
+                    ${f.img ? `<img src="${f.img}" class="feedback-img" onclick="openImageModal('${f.img}')" title="Clique para ampliar">` : ''}
                 `;
                 grid.appendChild(card);
             });
@@ -589,7 +776,7 @@
             document.getElementById('imageModal').style.display = 'flex';
         }
 
-        function closeImageModal() {
+        function closeModal() {
             document.getElementById('imageModal').style.display = 'none';
         }
 
@@ -599,6 +786,7 @@
                 isAdmin = true;
                 document.getElementById('adminPanel').style.display = 'flex';
                 renderPortfolio();
+                renderFeedbacks();
             } else if (pass !== null) {
                 alert("Senha incorreta!");
             }
@@ -608,54 +796,113 @@
             document.getElementById('adminPanel').style.display = 'none';
         }
 
-        // LEITURA DO ARQUIVO DA GALERIA DO CELULAR
+        // NOVO FEEDBACK ENVIADO PELO CLIENTE
+        function submitFeedback() {
+            const author = document.getElementById('fbAuthor').value;
+            const stars = parseInt(document.getElementById('fbStars').value);
+            const comment = document.getElementById('fbComment').value;
+            const fileInput = document.getElementById('fbFileInput');
+
+            if (!author || !comment) {
+                alert("Por favor, preencha seu nome e seu comentário!");
+                return;
+            }
+
+            const saveAndRender = (imgBase64 = '') => {
+                const newFeedback = {
+                    id: Date.now(),
+                    author: author,
+                    stars: stars,
+                    comment: comment,
+                    img: imgBase64
+                };
+
+                feedbacks.unshift(newFeedback);
+                localStorage.setItem('seven_feedbacks', JSON.stringify(feedbacks));
+
+                document.getElementById('fbAuthor').value = '';
+                document.getElementById('fbComment').value = '';
+                fileInput.value = '';
+
+                renderFeedbacks();
+                alert("Obrigado pelo seu feedback!");
+            };
+
+            if (fileInput.files.length > 0) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    saveAndRender(e.target.result);
+                };
+                reader.readAsDataURL(fileInput.files[0]);
+            } else {
+                saveAndRender();
+            }
+        }
+
+        // DELETAR FEEDBACK (APENAS MODO ADMIN)
+        function deleteFeedback(id) {
+            if (confirm("Deseja realmente apagar esta avaliação?")) {
+                feedbacks = feedbacks.filter(f => f.id !== id);
+                localStorage.setItem('seven_feedbacks', JSON.stringify(feedbacks));
+                renderFeedbacks();
+            }
+        }
+
+        // ALTERAR BANNER
+        function handleBannerUpload() {
+            const bannerInput = document.getElementById('bannerFileInput');
+            if (bannerInput.files.length === 0) {
+                alert("Selecione uma imagem!");
+                return;
+            }
+
+            const reader = new FileReader();
+            reader.onload = function(e) {
+                document.getElementById('heroBgImg').src = e.target.result;
+                localStorage.setItem('seven_banner', e.target.result);
+                bannerInput.value = '';
+                alert("Banner atualizado!");
+            };
+            reader.readAsDataURL(bannerInput.files[0]);
+        }
+
+        // NOVO PROJETO NO PORTFÓLIO
         function handleFileUpload() {
             const fileInput = document.getElementById('fileInput');
             const title = document.getElementById('newImgTitle').value;
             const category = document.getElementById('newImgCategory').value;
 
             if (fileInput.files.length === 0 || !title) {
-                alert("Por favor, escolha uma imagem da sua galeria e digite um título!");
+                alert("Preencha a imagem e o título!");
                 return;
             }
 
-            const file = fileInput.files[0];
             const reader = new FileReader();
-
             reader.onload = function(e) {
-                const base64Image = e.target.result;
-                
-                const newProj = {
-                    id: Date.now(),
-                    title: title,
-                    category: category,
-                    img: base64Image
-                };
-
+                const newProj = { id: Date.now(), title, category, img: e.target.result };
                 projects.unshift(newProj);
                 localStorage.setItem('seven_projects', JSON.stringify(projects));
 
-                // Limpar inputs
                 fileInput.value = '';
                 document.getElementById('newImgTitle').value = '';
 
-                closeAdminModal();
                 renderPortfolio();
-                alert("Foto da galeria adicionada com sucesso!");
+                alert("Foto adicionada ao portfólio!");
             };
-
-            reader.readAsDataURL(file);
+            reader.readAsDataURL(fileInput.files[0]);
         }
 
         function deleteProject(id) {
-            if (confirm("Deseja apagar esta foto do site?")) {
+            if (confirm("Deseja apagar esta foto do portfólio?")) {
                 projects = projects.filter(p => p.id !== id);
                 localStorage.setItem('seven_projects', JSON.stringify(projects));
                 renderPortfolio();
             }
         }
 
+        // INICIALIZAÇÃO
         renderPortfolio();
+        renderFeedbacks();
     </script>
 </body>
 </html>
