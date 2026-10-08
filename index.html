@@ -3,27 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Seven - Pias e Porcelanataria de Alto Padrão</title>
-    <meta name="description" content="Fabricação e instalação de lavatórios esculpidos, pias de cozinha e bancadas em porcelanato. Sofisticação, inovação e economia.">
+    <title>SEVEN - Pias em Porcelanato</title>
+    <meta name="description" content="PIAS E BANCADAS EXCLUSIVAS EM PORCELANATO. ACABAMENTOS PREMIUM COM DESIGN SEVEN.">
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <!-- FontAwesome (Ícones) -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
         :root {
-            /* Paleta Clean / Marfim Médio */
+            /* Paleta Clean / Marfim Médio da Imagem de Exemplo */
             --bg-body: #EFECE6;        /* Marfim Médio */
-            --bg-card: #FAF8F5;        /* Marfim Claro para cartões e destaques */
-            --bg-header: #E3DDD3;      /* Tom marfim um pouco mais encorpado */
-            --primary: #5cb3b3;        /* Cor azul-turquesa da marca Seven */
+            --bg-card: #FAF8F5;        /* Marfim Claro */
+            --bg-header: #E3DDD3;      /* Marfim Encorpado */
+            --primary: #5cb3b3;        /* Cor Turquesa Original do Logo SEVEN */
             --primary-hover: #489a9a;
-            --text-dark: #2B2A29;      /* Texto escuro e suave */
-            --text-muted: #6E6C68;    /* Texto secundário */
-            --border-color: #DCD6CD;   /* Linhas divisórias subtis */
-            --shadow-soft: 0 10px 30px rgba(0, 0, 0, 0.05);
+            --text-dark: #212121;
+            --text-muted: #666666;
+            --border-color: #DCD6CD;
+            --shadow: 0 10px 25px rgba(0,0,0,0.06);
         }
 
         * {
@@ -40,7 +40,7 @@
             line-height: 1.6;
         }
 
-        /* HEADER & NAVEGAÇÃO */
+        /* HEADER */
         header {
             background-color: var(--bg-header);
             position: fixed;
@@ -56,38 +56,34 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 18px 20px;
+            padding: 12px 20px;
         }
 
-        .logo-text {
-            font-size: 1.8rem;
-            font-weight: 700;
-            letter-spacing: 2px;
-            color: var(--primary);
+        .logo-box {
+            display: flex;
+            align-items: center;
             text-decoration: none;
-            text-transform: uppercase;
+            cursor: pointer;
         }
 
-        .logo-text span {
-            display: block;
-            font-size: 0.65rem;
-            color: var(--text-dark);
-            letter-spacing: 4px;
-            margin-top: -4px;
-            font-weight: 500;
+        .logo-img {
+            height: 48px;
+            width: auto;
+            object-fit: contain;
         }
 
         .nav-menu {
             display: flex;
             list-style: none;
-            gap: 30px;
+            gap: 25px;
+            align-items: center;
         }
 
         .nav-menu a {
             color: var(--text-dark);
             text-decoration: none;
-            font-size: 0.9rem;
-            font-weight: 600;
+            font-size: 0.85rem;
+            font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 1px;
             transition: color 0.3s;
@@ -97,183 +93,230 @@
             color: var(--primary);
         }
 
-        .mobile-toggle {
-            display: none;
-            font-size: 1.5rem;
-            color: var(--text-dark);
+        .admin-badge-btn {
+            background: var(--text-dark);
+            color: #fff;
+            border: none;
+            padding: 7px 14px;
+            border-radius: 4px;
+            font-size: 0.75rem;
             cursor: pointer;
+            font-weight: 600;
+            transition: background 0.3s;
         }
 
-        /* HERO SECTION */
+        .admin-badge-btn:hover {
+            background: var(--primary);
+        }
+
+        /* HERO SECTION BANNER */
         .hero {
-            margin-top: 80px;
-            padding: 100px 20px 80px;
+            margin-top: 72px;
+            position: relative;
+            min-height: 500px;
+            background: linear-gradient(rgba(0, 0, 0, 0.45), rgba(0, 0, 0, 0.45)), 
+                        url('https://images.unsplash.com/photo-1584622650111-993a426fbf0a?q=80&w=1600&auto=format&fit=crop') center/cover no-repeat;
+            display: flex;
+            align-items: center;
+            justify-content: center;
             text-align: center;
-            background-color: var(--bg-card);
-            border-bottom: 1px solid var(--border-color);
+            padding: 40px 20px;
+            color: #FFFFFF;
         }
 
         .hero-content {
             max-width: 850px;
-            margin: 0 auto;
         }
 
         .hero h1 {
-            font-size: 2.6rem;
+            font-size: 2.2rem;
             font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
             margin-bottom: 20px;
-            color: var(--text-dark);
             line-height: 1.3;
-        }
-
-        .hero h1 span {
-            color: var(--primary);
-        }
-
-        .hero p {
-            font-size: 1.1rem;
-            color: var(--text-muted);
-            margin-bottom: 35px;
-            font-weight: 400;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.5);
         }
 
         .btn-primary {
             display: inline-block;
-            background-color: var(--primary);
+            background-color: transparent;
             color: #FFFFFF;
-            padding: 15px 35px;
+            border: 2px solid #FFFFFF;
+            padding: 12px 30px;
             border-radius: 4px;
             text-decoration: none;
-            font-weight: 600;
+            font-weight: 700;
             text-transform: uppercase;
             letter-spacing: 1px;
             transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(92, 179, 179, 0.3);
         }
 
         .btn-primary:hover {
-            background-color: var(--primary-hover);
+            background-color: var(--primary);
+            border-color: var(--primary);
+            color: #FFFFFF;
             transform: translateY(-2px);
         }
 
-        /* SOBRE / RESUMO */
-        .about-strip {
-            padding: 60px 20px;
-            text-align: center;
-            max-width: 900px;
-            margin: 0 auto;
-        }
-
-        .about-strip h2 {
-            font-size: 1.8rem;
-            margin-bottom: 15px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .about-strip p {
-            color: var(--text-muted);
-            font-size: 1.05rem;
-        }
-
-        /* PORTFÓLIO & FILTROS */
-        .portfolio-section {
-            padding: 60px 20px 100px;
+        /* PORTFÓLIO SECTION */
+        .section-container {
             max-width: 1200px;
             margin: 0 auto;
+            padding: 50px 20px;
         }
 
-        /* FILTROS POR CATEGORIA */
+        .section-title {
+            text-align: center;
+            font-size: 1.8rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 25px;
+            font-weight: 700;
+        }
+
+        /* FILTROS */
         .filter-buttons {
             display: flex;
             justify-content: center;
             flex-wrap: wrap;
-            gap: 12px;
-            margin-bottom: 40px;
+            gap: 10px;
+            margin-bottom: 35px;
         }
 
         .filter-btn {
             background-color: var(--bg-card);
             border: 1px solid var(--border-color);
             color: var(--text-dark);
-            padding: 10px 24px;
-            border-radius: 30px;
-            font-size: 0.85rem;
-            font-weight: 600;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 700;
             cursor: pointer;
             text-transform: uppercase;
             letter-spacing: 1px;
             transition: all 0.3s;
         }
 
-        .filter-btn:hover, .filter-btn.active {
+        .filter-btn.active, .filter-btn:hover {
             background-color: var(--primary);
-            color: #FFFFFF;
+            color: #FFF;
             border-color: var(--primary);
         }
 
-        /* GRID DO PORTFÓLIO */
+        /* GRID PORTFOLIO (ESTILO QUADRO MESA/EXEMPLO) */
         .portfolio-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-            gap: 30px;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 25px;
         }
 
-        .portfolio-card {
+        .card {
             background-color: var(--bg-card);
             border: 1px solid var(--border-color);
-            border-radius: 8px;
+            border-radius: 12px;
             overflow: hidden;
-            box-shadow: var(--shadow-soft);
-            transition: transform 0.3s, box-shadow 0.3s;
-            cursor: pointer;
-        }
-
-        .portfolio-card:hover {
-            transform: translateY(-6px);
-            box-shadow: 0 15px 35px rgba(0,0,0,0.08);
-        }
-
-        .portfolio-img-wrapper {
+            box-shadow: var(--shadow);
             position: relative;
-            width: 100%;
-            height: 280px;
-            overflow: hidden;
-            background-color: var(--bg-body);
+            transition: transform 0.3s;
         }
 
-        .portfolio-img-wrapper img {
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card-img {
             width: 100%;
-            height: 100%;
+            height: 250px;
             object-fit: cover;
-            transition: transform 0.5s ease;
-        }
-
-        .portfolio-card:hover .portfolio-img-wrapper img {
-            transform: scale(1.05);
-        }
-
-        .portfolio-info {
-            padding: 20px;
-        }
-
-        .portfolio-tag {
-            font-size: 0.75rem;
-            font-weight: 700;
-            color: var(--primary);
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 5px;
+            cursor: pointer;
             display: block;
         }
 
-        .portfolio-title {
-            font-size: 1.1rem;
+        .card-body {
+            padding: 15px;
+            text-align: center;
+        }
+
+        .card-title {
+            font-size: 0.9rem;
             font-weight: 600;
             color: var(--text-dark);
         }
 
-        /* MODAL DE VISUALIZAÇÃO DA FOTO */
+        .delete-card-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: #ff4d4d;
+            color: white;
+            border: none;
+            padding: 6px 10px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 0.75rem;
+            display: none;
+            z-index: 10;
+        }
+
+        /* SEÇÃO DE DIFERENCIAL & CONTATO */
+        .diferencial-box {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 40px 20px;
+            margin-top: 20px;
+        }
+
+        .diferencial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            align-items: center;
+        }
+
+        .testimonial {
+            font-style: italic;
+            color: var(--text-muted);
+            text-align: center;
+            padding: 20px;
+        }
+
+        .testimonial span {
+            display: block;
+            margin-top: 10px;
+            font-weight: 700;
+            font-style: normal;
+            color: var(--text-dark);
+        }
+
+        .contact-form-mini {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .contact-form-mini input, .contact-form-mini textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+            background-color: #FFF;
+            font-size: 0.9rem;
+        }
+
+        .contact-form-mini button {
+            background-color: var(--primary);
+            color: white;
+            border: none;
+            padding: 12px;
+            border-radius: 4px;
+            font-weight: 700;
+            cursor: pointer;
+            text-transform: uppercase;
+        }
+
+        /* MODAL DE IMAGEM */
         .modal {
             display: none;
             position: fixed;
@@ -281,72 +324,89 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-color: rgba(0, 0, 0, 0.85);
+            background: rgba(0,0,0,0.85);
             z-index: 2000;
             justify-content: center;
             align-items: center;
             padding: 20px;
         }
 
-        .modal-content {
+        .modal img {
             max-width: 90%;
             max-height: 85vh;
             border-radius: 6px;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.5);
         }
 
         .modal-close {
             position: absolute;
             top: 20px;
-            right: 35px;
-            color: #FFF;
-            font-size: 40px;
-            font-weight: bold;
+            right: 30px;
+            color: white;
+            font-size: 35px;
             cursor: pointer;
         }
 
-        /* FOOTER & CONTATO */
+        /* PAINEL ADMIN MODAL */
+        .admin-panel {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.7);
+            z-index: 3000;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .admin-content {
+            background: var(--bg-card);
+            padding: 30px;
+            border-radius: 8px;
+            max-width: 500px;
+            width: 100%;
+            border: 1px solid var(--border-color);
+        }
+
+        .admin-content h3 {
+            margin-bottom: 20px;
+            font-size: 1.2rem;
+            text-transform: uppercase;
+        }
+
+        .admin-content input, .admin-content select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid var(--border-color);
+            border-radius: 4px;
+        }
+
+        .admin-btns {
+            display: flex;
+            gap: 10px;
+            justify-content: flex-end;
+        }
+
+        .btn-sec {
+            background: #888;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        /* FOOTER */
         footer {
             background-color: var(--bg-header);
             border-top: 1px solid var(--border-color);
-            padding: 60px 20px 30px;
+            padding: 40px 20px 20px;
             text-align: center;
         }
 
-        .footer-content {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .contact-info {
-            margin: 30px 0;
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-            align-items: center;
-        }
-
-        .contact-item {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            font-size: 1.1rem;
-            font-weight: 500;
-        }
-
-        .contact-item i {
-            color: var(--primary);
-        }
-
-        .copyright {
-            margin-top: 40px;
-            font-size: 0.85rem;
-            color: var(--text-muted);
-            border-top: 1px solid var(--border-color);
-            padding-top: 20px;
-        }
-
-        /* BOTÃO FLUTUANTE WHATSAPP */
         .whatsapp-float {
             position: fixed;
             bottom: 25px;
@@ -363,248 +423,215 @@
             box-shadow: 0 4px 15px rgba(0,0,0,0.2);
             text-decoration: none;
             z-index: 1001;
-            transition: transform 0.3s;
-        }
-
-        .whatsapp-float:hover {
-            transform: scale(1.1);
-        }
-
-        /* RESPONSIVIDADE MOBILE */
-        @media (max-width: 768px) {
-            .mobile-toggle {
-                display: block;
-            }
-
-            .nav-menu {
-                display: none;
-                position: absolute;
-                top: 100%;
-                left: 0;
-                width: 100%;
-                background-color: var(--bg-header);
-                flex-direction: column;
-                padding: 25px;
-                border-bottom: 1px solid var(--border-color);
-                text-align: center;
-                gap: 20px;
-            }
-
-            .nav-menu.active {
-                display: flex;
-            }
-
-            .hero h1 {
-                font-size: 1.9rem;
-            }
-
-            .hero p {
-                font-size: 0.95rem;
-            }
         }
     </style>
 </head>
 <body>
 
-    <!-- HEADER / NAVEGAÇÃO -->
+    <!-- HEADER COM LOGO OFICIAL -->
     <header>
         <div class="nav-container">
-            <a href="#" class="logo-text">SEVEN<span>Pias em Porcelanato</span></a>
-            <div class="mobile-toggle" id="mobile-menu">
-                <i class="fas fa-bars"></i>
-            </div>
-            <ul class="nav-menu" id="nav-list">
+            <a href="#" class="logo-box">
+                <!-- Logotipo Oficial SEVEN -->
+                <img src="image.png" alt="SEVEN Pias em porcelanato" class="logo-img">
+            </a>
+            <ul class="nav-menu">
                 <li><a href="#inicio">Início</a></li>
-                <li><a href="#sobre">Diferenciais</a></li>
-                <li><a href="#portfoliosection">Portfólio</a></li>
+                <li><a href="#produtos">Produtos</a></li>
+                <li><a href="#trabalhos">Portfólio</a></li>
                 <li><a href="#contato">Contato</a></li>
             </ul>
+            <button class="admin-badge-btn" onclick="openAdminModal()"><i class="fas fa-lock"></i> Admin</button>
         </div>
     </header>
 
-    <!-- HERO SECTION -->
+    <!-- BANNER PRINCIPAL -->
     <section class="hero" id="inicio">
         <div class="hero-content">
-            <h1>Fabricação e Instalação de <span>Pias e Bancadas em Porcelanato</span></h1>
-            <p>A porcelanataria traz sofisticação, inovação e economia para o seu ambiente. Projetos exclusivos sob medida com acabamento impecável.</p>
-            <a href="https://wa.me/5511947764616?text=Ol%C3%A1!%20Gostaria%20de%20fazer%20um%20or%C3%A7amento." target="_blank" class="btn-primary">
-                <i class="fab fa-whatsapp"></i> Fazer Orçamento
-            </a>
+            <h1>PIAS E BANCADAS EXCLUSIVAS EM PORCELANATO.<br>ACABAMENTOS PREMIUM COM DESIGN SEVEN.</h1>
+            <a href="https://wa.me/5511947764616?text=Ol%C3%A1!%20Gostaria%20de%20fazer%20um%20or%C3%A7amento." target="_blank" class="btn-primary">VER PRODUTOS</a>
         </div>
     </section>
 
-    <!-- SOBRE / VANTAGENS -->
-    <section class="about-strip" id="sobre">
-        <h2>Recursos & Sofisticação</h2>
-        <p>
-            Fabricamos soluções completas: Nichos, Lavatórios Esculpidos, Bancadas de Sobrepor, Pias de Cozinha Completas, Bancadas para Cooktop e Áreas Comerciais.
-        </p>
-    </section>
+    <!-- NOSSO TRABALHO -->
+    <section class="section-container" id="trabalhos">
+        <h2 class="section-title">NOSSO TRABALHO</h2>
 
-    <!-- PORTFÓLIO INTERATIVO -->
-    <section class="portfolio-section" id="portfoliosection">
-        
         <!-- FILTROS -->
         <div class="filter-buttons">
-            <button class="filter-btn active" onclick="filterSelection('todos')">Todos os Projetos</button>
-            <button class="filter-btn" onclick="filterSelection('esculpidos')">Lavatórios Esculpidos</button>
-            <button class="filter-btn" onclick="filterSelection('cozinha')">Pias de Cozinha</button>
-            <button class="filter-btn" onclick="filterSelection('sobrepor')">Bancadas de Sobrepor</button>
+            <button class="filter-btn active" onclick="filterCategory('todos')">Todos</button>
+            <button class="filter-btn" onclick="filterCategory('sobrepor')">Bancadas de Sobrepor</button>
+            <button class="filter-btn" onclick="filterCategory('esculpido')">Lavatórios Esculpidos</button>
+            <button class="filter-btn" onclick="filterCategory('cozinha')">Pias de Cozinha</button>
         </div>
 
-        <!-- GRID DE FOTOS -->
-        <div class="portfolio-grid">
-
-            <!-- ITEM 1: COZINHA -->
-            <div class="portfolio-card item-category cozinha" onclick="openModal('https://via.placeholder.com/800x600/E3DDD3/2B2A29?text=Cozinha+em+Porcelanato')">
-                <div class="portfolio-img-wrapper">
-                    <img src="https://via.placeholder.com/600x450/E3DDD3/2B2A29?text=Cozinha+e+Ilha+em+Porcelanato" alt="Pia e Bancada de Cozinha">
-                </div>
-                <div class="portfolio-info">
-                    <span class="portfolio-tag">Cozinha & Ilha</span>
-                    <h3 class="portfolio-title">Bancada Integrada em Porcelanato Claro</h3>
-                </div>
-            </div>
-
-            <!-- ITEM 2: ESCULPIDO -->
-            <div class="portfolio-card item-category esculpidos" onclick="openModal('https://via.placeholder.com/800x600/E3DDD3/2B2A29?text=Lavatorio+Esculpido+Preto')">
-                <div class="portfolio-img-wrapper">
-                    <img src="https://via.placeholder.com/600x450/E3DDD3/2B2A29?text=Lavatorio+Esculpido+Preto" alt="Lavatório Esculpido Preto">
-                </div>
-                <div class="portfolio-info">
-                    <span class="portfolio-tag">Lavatório Esculpido</span>
-                    <h3 class="portfolio-title">Cuba Esculpida com Ralo Oculto Preto</h3>
-                </div>
-            </div>
-
-            <!-- ITEM 3: SOBREPOR -->
-            <div class="portfolio-card item-category sobrepor" onclick="openModal('https://via.placeholder.com/800x600/E3DDD3/2B2A29?text=Bancada+de+Sobrepor+Marmorizada')">
-                <div class="portfolio-img-wrapper">
-                    <img src="https://via.placeholder.com/600x450/E3DDD3/2B2A29?text=Bancada+de+Sobrepor+Marmorizada" alt="Bancada de Sobrepor">
-                </div>
-                <div class="portfolio-info">
-                    <span class="portfolio-tag">Bancada de Sobrepor</span>
-                    <h3 class="portfolio-title">Bancada Marmorizada com Prateleira</h3>
-                </div>
-            </div>
-
-            <!-- ITEM 4: ESCULPIDO -->
-            <div class="portfolio-card item-category esculpidos" onclick="openModal('https://via.placeholder.com/800x600/E3DDD3/2B2A29?text=Lavatorio+Esculpido+Cinza')">
-                <div class="portfolio-img-wrapper">
-                    <img src="https://via.placeholder.com/600x450/E3DDD3/2B2A29?text=Lavatorio+Esculpido+Cinza" alt="Lavatório Esculpido Cinza">
-                </div>
-                <div class="portfolio-info">
-                    <span class="portfolio-tag">Lavatório Esculpido</span>
-                    <h3 class="portfolio-title">Lavatório Suspenso em Porcelanato Cinza</h3>
-                </div>
-            </div>
-
-            <!-- ITEM 5: SOBREPOR -->
-            <div class="portfolio-card item-category sobrepor" onclick="openModal('https://via.placeholder.com/800x600/E3DDD3/2B2A29?text=Bancada+Branca+de+Sobrepor')">
-                <div class="portfolio-img-wrapper">
-                    <img src="https://via.placeholder.com/600x450/E3DDD3/2B2A29?text=Bancada+Branca+de+Sobrepor" alt="Bancada de Sobrepor Branca">
-                </div>
-                <div class="portfolio-info">
-                    <span class="portfolio-tag">Bancada de Sobrepor</span>
-                    <h3 class="portfolio-title">Bancada Clean com Cuba de Louça</h3>
-                </div>
-            </div>
-
-            <!-- ITEM 6: ESCULPIDO -->
-            <div class="portfolio-card item-category esculpidos" onclick="openModal('https://via.placeholder.com/800x600/E3DDD3/2B2A29?text=Lavatorio+Marmorizado+Esculpido')">
-                <div class="portfolio-img-wrapper">
-                    <img src="https://via.placeholder.com/600x450/E3DDD3/2B2A29?text=Lavatorio+Marmorizado+Esculpido" alt="Lavatório Marmorizado">
-                </div>
-                <div class="portfolio-info">
-                    <span class="portfolio-tag">Lavatório Esculpido</span>
-                    <h3 class="portfolio-title">Cuba Esculpida Marmorizada Ouro</h3>
-                </div>
-            </div>
-
+        <!-- GRID DE CARDS COM FOTOS REALMENTE CARREGADAS -->
+        <div class="portfolio-grid" id="portfolioGrid">
+            <!-- Os cards serão alimentados via JS com as imagens do repositório/upload -->
         </div>
     </section>
 
-    <!-- MODAL PARA VER A IMAGEM EM TAMANHO GRANDE -->
-    <div id="imageModal" class="modal" onclick="closeModal()">
-        <span class="modal-close">&times;</span>
-        <img class="modal-content" id="imgModalTarget">
-    </div>
-
-    <!-- FOOTER / CONTATO -->
-    <footer id="contato">
-        <div class="footer-content">
-            <a href="#" class="logo-text">SEVEN<span>Pias em Porcelanato</span></a>
-            
-            <div class="contact-info">
-                <div class="contact-item">
-                    <i class="fab fa-whatsapp"></i>
-                    <span>(11) 94776-4616</span>
+    <!-- DIFERENCIAL & CONTATO -->
+    <section class="section-container" id="contato">
+        <h2 class="section-title">NOSSO DIFERENCIAL & FALE CONOSCO</h2>
+        
+        <div class="diferencial-box">
+            <div class="diferencial-grid">
+                <div class="testimonial">
+                    "Excelente acabamento e precisão, superou nossas expectativas."
+                    <span>- Fernanda R.</span>
                 </div>
-                <div class="contact-item">
-                    <i class="fas fa-gem"></i>
-                    <span>Acabamentos de Precisão Sob Medida</span>
+
+                <div class="contact-form-mini">
+                    <input type="text" placeholder="Nome">
+                    <input type="email" placeholder="Email">
+                    <textarea rows="3" placeholder="Mensagem"></textarea>
+                    <a href="https://wa.me/5511947764616?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20gostaria%20de%20fazer%20um%20or%C3%A7amento." target="_blank" style="text-decoration:none;">
+                        <button type="button" style="width:100%;">CONTATO VIA WHATSAPP</button>
+                    </a>
                 </div>
-            </div>
-
-            <a href="https://wa.me/5511947764616?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20gostaria%20de%20tirar%20duvidas." target="_blank" class="btn-primary">
-                Falar pelo WhatsApp
-            </a>
-
-            <div class="copyright">
-                &copy; SEVEN Pias em Porcelanato. Todos os direitos reservados.
             </div>
         </div>
+    </section>
+
+    <!-- MODAL DE VISUALIZAÇÃO DE FOTO -->
+    <div class="modal" id="imageModal" onclick="closeImageModal()">
+        <span class="modal-close">&times;</span>
+        <img id="modalImgTarget" src="" alt="Ampliação">
+    </div>
+
+    <!-- PAINEL ADMINISTRADOR -->
+    <div class="admin-panel" id="adminPanel">
+        <div class="admin-content">
+            <h3>Adicionar Nova Foto ao Site</h3>
+            <label>Link ou Nome do Arquivo da Imagem:</label>
+            <input type="text" id="newImgUrl" placeholder="Ex: image_2.png ou link da imagem...">
+            
+            <label>Título da Peça:</label>
+            <input type="text" id="newImgTitle" placeholder="Ex: Pia de Sobrepor Marmorizada">
+            
+            <label>Categoria:</label>
+            <select id="newImgCategory">
+                <option value="sobrepor">Bancada de Sobrepor</option>
+                <option value="esculpido">Lavatório Esculpido</option>
+                <option value="cozinha">Pia de Cozinha</option>
+            </select>
+
+            <div class="admin-btns">
+                <button class="btn-sec" onclick="closeAdminModal()">Cancelar</button>
+                <button class="btn-primary" style="background:var(--primary); color:white;" onclick="addNewProject()">Salvar Foto</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+        <p style="font-size: 0.85rem; color: var(--text-muted);">
+            SEVEN Pias em porcelanato. &copy; 2026. Todos os direitos reservados.
+        </p>
     </footer>
 
     <!-- BOTÃO WHATSAPP FLUTUANTE -->
-    <a href="https://wa.me/5511947764616?text=Ol%C3%A1!%20Gostaria%20de%20fazer%20um%20or%C3%A7amento." class="whatsapp-float" target="_blank" title="Fale pelo WhatsApp">
+    <a href="https://wa.me/5511947764616?text=Ol%C3%A1!%20Gostaria%20de%20fazer%20um%20or%C3%A7amento." class="whatsapp-float" target="_blank">
         <i class="fab fa-whatsapp"></i>
     </a>
 
     <!-- SCRIPTS -->
     <script>
-        // Menu Mobile Toggle
-        const mobileMenu = document.getElementById('mobile-menu');
-        const navList = document.getElementById('nav-list');
+        // Mapeamento inicial das fotos reais enviadas no projeto
+        const defaultProjects = [
+            { id: 1, title: "Pia bancada em porcelanato marmorizado", category: "sobrepor", img: "image_2.png" },
+            { id: 2, title: "Bancada branca com cuba de sobrepor", category: "sobrepor", img: "image_3.png" },
+            { id: 3, title: "Pia em porcelanato estilo vanity", category: "sobrepor", img: "image_4.png" },
+            { id: 4, title: "Bancada cinza com cuba quadrada", category: "sobrepor", img: "image_5.png" },
+            { id: 5, title: "Bancada de cozinha e ilha completa", category: "cozinha", img: "image_9.png" },
+            { id: 6, title: "Lavatório esculpido em porcelanato cinza", category: "esculpido", img: "image_10.png" },
+            { id: 7, title: "Lavatório esculpido suspenso preto", category: "esculpido", img: "image_13.png" }
+        ];
 
-        mobileMenu.addEventListener('click', () => {
-            navList.classList.toggle('active');
-        });
+        let projects = JSON.parse(localStorage.getItem('seven_projects')) || defaultProjects;
+        let isAdmin = false;
 
-        // Filtro do Portfólio
-        function filterSelection(category) {
-            const cards = document.querySelectorAll('.item-category');
-            const buttons = document.querySelectorAll('.filter-btn');
+        function renderPortfolio(filter = 'todos') {
+            const grid = document.getElementById('portfolioGrid');
+            grid.innerHTML = '';
 
-            // Atualiza o botão ativo
-            buttons.forEach(btn => btn.classList.remove('active'));
-            event.target.classList.add('active');
+            const filtered = filter === 'todos' ? projects : projects.filter(p => p.category === filter);
 
-            // Exibe/Oculta os cards
-            cards.forEach(card => {
-                if (category === 'todos') {
-                    card.style.display = 'block';
-                } else {
-                    if (card.classList.contains(category)) {
-                        card.style.display = 'block';
-                    } else {
-                        card.style.display = 'none';
-                    }
-                }
+            filtered.forEach(p => {
+                const card = document.createElement('div');
+                card.className = 'card';
+                card.innerHTML = `
+                    ${isAdmin ? `<button class="delete-card-btn" style="display:block;" onclick="deleteProject(${p.id})"><i class="fas fa-trash"></i> Excluir</button>` : ''}
+                    <img src="${p.img}" class="card-img" alt="${p.title}" onclick="openImageModal('${p.img}')">
+                    <div class="card-body">
+                        <h4 class="card-title">${p.title}</h4>
+                    </div>
+                `;
+                grid.appendChild(card);
             });
         }
 
-        // Modal de Imagem
-        function openModal(imageSrc) {
-            const modal = document.getElementById('imageModal');
-            const modalImg = document.getElementById('imgModalTarget');
-            modal.style.display = 'flex';
-            modalImg.src = imageSrc;
+        function filterCategory(cat) {
+            document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+            renderPortfolio(cat);
         }
 
-        function closeModal() {
+        function openImageModal(src) {
+            document.getElementById('modalImgTarget').src = src;
+            document.getElementById('imageModal').style.display = 'flex';
+        }
+
+        function closeImageModal() {
             document.getElementById('imageModal').style.display = 'none';
         }
+
+        function openAdminModal() {
+            const pass = prompt("Digite a senha do painel de administração:");
+            if (pass === "1234" || pass === "seven") {
+                isAdmin = true;
+                document.getElementById('adminPanel').style.display = 'flex';
+                renderPortfolio();
+            } else if (pass !== null) {
+                alert("Senha incorreta!");
+            }
+        }
+
+        function closeAdminModal() {
+            document.getElementById('adminPanel').style.display = 'none';
+        }
+
+        function addNewProject() {
+            const url = document.getElementById('newImgUrl').value;
+            const title = document.getElementById('newImgTitle').value;
+            const category = document.getElementById('newImgCategory').value;
+
+            if (!url || !title) {
+                alert("Por favor, preencha todos os campos!");
+                return;
+            }
+
+            const newProj = { id: Date.now(), title, category, img: url };
+            projects.unshift(newProj);
+            localStorage.setItem('seven_projects', JSON.stringify(projects));
+
+            document.getElementById('newImgUrl').value = '';
+            document.getElementById('newImgTitle').value = '';
+
+            closeAdminModal();
+            renderPortfolio();
+        }
+
+        function deleteProject(id) {
+            if (confirm("Deseja apagar esta foto do portfólio?")) {
+                projects = projects.filter(p => p.id !== id);
+                localStorage.setItem('seven_projects', JSON.stringify(projects));
+                renderPortfolio();
+            }
+        }
+
+        renderPortfolio();
     </script>
 </body>
 </html>
