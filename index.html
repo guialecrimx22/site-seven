@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seven - Pias e Porcelanataria de Alto Padrão</title>
+    <meta name="description" content="Fabricação e instalação de lavatórios esculpidos, pias de cozinha e bancadas em porcelanato. Sofisticação, inovação e economia.">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome (Ícones) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            /* Paleta Clean / Marfim Médio */
+            --bg-body: #EFECE6;        /* Marfim Médio */
+            --bg-card: #FAF8F5;        /* Marfim Claro para cartões e destaques */
+            --bg-header: #E3DDD3;      /* Tom marfim um pouco mais encorpado */
+            --primary: #5cb3b3;        /* Cor azul-turquesa da marca Seven */
+            --primary-hover: #489a9a;
+            --text-dark: #2B2A29;      /* Texto escuro e suave */
+            --text-muted: #6E6C68;    /* Texto secundário */
+            --border-color: #DCD6CD;   /* Linhas divisórias subtis */
+            --shadow-soft: 0 10px 30px rgba(0, 0, 0, 0.05);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Montserrat', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--bg-body);
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        /* HEADER & NAVEGAÇÃO */
+        header {
+            background-color: var(--bg-header);
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 18px 20px;
+        }
+
+        .logo-text {
+            font-size: 1.8rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            color: var(--primary);
+            text-decoration: none;
+            text-transform: uppercase;
+        }
+
+        .logo-text span {
+            display: block;
+            font-size: 0.65rem;
+            color: var(--text-dark);
+            letter-spacing: 4px;
+            margin-top: -4px;
+            font-weight: 500;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        .nav-menu a {
+            color: var(--text-dark);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: color 0.3s;
+        }
+
+        .nav-menu a:hover {
+            color: var(--primary);
+        }
+
+        .mobile-toggle {
+            display: none;
+            font-size: 1.5rem;
+            color: var(--text-dark);
+            cursor: pointer;
+        }
+
+        /* HERO SECTION */
+        .hero {
+            margin-top: 80px;
+            padding: 100px 20px 80px;
+            text-align: center;
+            background-color: var(--bg-card);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .hero-content {
+            max-width: 850px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 2.6rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: var(--text-dark);
+            line-height: 1.3;
+        }
+
+        .hero h1 span {
+            color: var(--primary);
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            margin-bottom: 35px;
+            font-weight: 400;
+        }
+
+        .btn-primary {
+            display: inline-block;
+            background-color: var(--primary);
+            color: #FFFFFF;
+            padding: 15px 35px;
+            border-radius: 4px;
+            text-decoration: none;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(92, 179, 179, 0.3);
+        }
+
+        .btn-primary:hover {
+            background-color: var(--primary-hover);
+            transform: translateY(-2px);
+        }
+
+        /* SOBRE / RESUMO */
+        .about-strip {
+            padding: 60px 20px;
+            text-align: center;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .about-strip h2 {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .about-strip p {
+            color: var(--text-muted);
+            font-size: 1.05rem;
+        }
+
+        /* PORTFÓLIO & FILTROS */
+        .portfolio-section {
+            padding: 60px 20px 100px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* FILTROS POR CATEGORIA */
+        .filter-buttons {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-bottom: 40px;
+        }
+
+        .filter-btn {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-color);
+            color: var(--text-dark);
+            padding: 10px 24px;
+            border-radius: 30px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            cursor: pointer;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s;
+        }
+
+        .filter-btn:hover, .filter-btn.active {
+            background-color: var(--primary);
+            color: #FFFFFF;
+            border-color: var(--primary);
+        }
+
+        /* GRID DO PORTFÓLIO */
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 30px;
+        }
+
+        .portfolio-card {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: var(--shadow-soft);
+            transition: transform 0.3s, box-shadow 0.3s;
+            cursor: pointer;
+        }
+
+        .portfolio-card:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.08);
+        }
+
+        .portfolio-img-wrapper {
+            position: relative;
+            width: 100%;
+            height: 280px;
+            overflow: hidden;
+            background-color: var(--bg-body);
+        }
+
+        .portfolio-img-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .portfolio-card:hover .portfolio-img-wrapper img {
+            transform: scale(1.05);
+        }
+
+        .portfolio-info {
+            padding: 20px;
+        }
+
+        .portfolio-tag {
+            font-size: 0.75rem;
+            font-weight: 700;
+            color: var(--primary);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 5px;
+            display: block;
+        }
+
+        .portfolio-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--text-dark);
+        }
+
+        /* MODAL DE VISUALIZAÇÃO DA FOTO */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.85);
+            z-index: 2000;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .modal-content {
+            max-width: 90%;
+            max-height: 85vh;
+            border-radius: 6px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 20px;
+            right: 35px;
+            color: #FFF;
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        /* FOOTER & CONTATO */
+        footer {
+            background-color: var(--bg-header);
+            border-top: 1px solid var(--border-color);
+            padding: 60px 20px 30px;
+            text-align: center;
+        }
+
+        .footer-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .contact-info {
+            margin: 30px 0;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            align-items: center;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 1.1rem;
+            font-weight: 500;
+        }
+
+        .contact-item i {
+            color: var(--primary);
+        }
+
+        .copyright {
+            margin-top: 40px;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            border-top: 1px solid var(--border-color);
+            padding-top: 20px;
+        }
+
+        /* BOTÃO FLUTUANTE WHATSAPP */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            background-color: #25d366;
+            color: #FFF;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 30px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            text-decoration: none;
+            z-index: 1001;
+            transition: transform 0.3s;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+        }
+
+        /* RESPONSIVIDADE MOBILE */
+        @media (max-width: 768px) {
+            .mobile-toggle {
+                display: block;
+            }
+
+            .nav-menu {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                width: 100%;
+                background-color: var(--bg-header);
+                flex-direction: column;
+                padding: 25px;
+                border-bottom: 1px solid var(--border-color);
+                text-align: center;
+                gap: 20px;
+            }
+
+            .nav-menu.active {
+                display: flex;
+            }
+
+            .hero h1 {
+                font-size: 1.9rem;
+            }
+
+            .hero p {
+                font-size: 0.95rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HEADER / NAVEGAÇÃO -->
+    <header>
+        <div class="nav-container">
+            <a href="#" class="logo-text">SEVEN<span>Pias em Porcelanato</span></a>
+            <div class="mobile-toggle" id="mobile-menu">
+                <i class="fas fa-bars"></i>
+            </div>
+            <ul class="nav-menu" id="nav-list">
+                <li><a href="#inicio">Início</a></li>
+                <li><a href="#sobre">Diferenciais</a></li>
+                <li><a href="#portfoliosection">Portfólio</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="hero" id="inicio">
+        <div class="hero-content">
+            <h1>Fabricação e Instalação de <span>Pias e Bancadas em Porcelanato</span></h1>
+            <p>A porcelanataria traz sofisticação, inovação e economia para o seu ambiente. Projetos exclusivos sob medida com acabamento impecável.</p>
+            <a href="https://wa.me/5511947764616?text=Ol%C3%A1!%20Gostaria%20de%20fazer%20um%20or%C3%A7amento." target="_blank" class="btn-primary">
+                <i class="fab fa-whatsapp"></i> Fazer Orçamento
+            </a>
+        </div>
+    </section>
+
+    <!-- SOBRE / VANTAGENS -->
+    <section class="about-strip" id="sobre">
+        <h2>Recursos & Sofisticação</h2>
+        <p>
+            Fabricamos soluções completas: Nichos, Lavatórios Esculpidos, Bancadas de Sobrepor, Pias de Cozinha Completas, Bancadas para Cooktop e Áreas Comerciais.
+        </p>
+    </section>
+
+    <!-- PORTFÓLIO INTERATIVO -->
+    <section class="portfolio-section" id="portfoliosection">
+        
+        <!-- FILTROS -->
+        <div class="filter-buttons">
+            <button class="filter-btn active" onclick="filterSelection('todos')">Todos os Projetos</button>
+            <button class="filter-btn" onclick="filterSelection('esculpidos')">Lavatórios Esculpidos</button>
+            <button class="filter-btn" onclick="filterSelection('cozinha')">Pias de Cozinha</button>
+            <button class="filter-btn" onclick="filterSelection('sobrepor')">Bancadas de Sobrepor</button>
+        </div>
+
+        <!-- GRID DE FOTOS -->
+        <div class="portfolio-grid">
+
+            <!-- ITEM 1: COZINHA -->
+            <div class="portfolio-card item-category cozinha" onclick="openModal('https://via.placeholder.com/800x600/E3DDD3/2B2A29?text=Cozinha+em+Porcelanato')">
+                <div class="portfolio-img-wrapper">
+                    <img src="https://via.placeholder.com/600x450/E3DDD3/2B2A29?text=Cozinha+e+Ilha+em+Porcelanato" alt="Pia e Bancada de Cozinha">
+                </div>
+                <div class="portfolio-info">
+                    <span class="portfolio-tag">Cozinha & Ilha</span>
+                    <h3 class="portfolio-title">Bancada Integrada em Porcelanato Claro</h3>
+                </div>
+            </div>
+
+            <!-- ITEM 2: ESCULPIDO -->
+            <div class="portfolio-card item-category esculpidos" onclick="openModal('https://via.placeholder.com/800x600/E3DDD3/2B2A29?text=Lavatorio+Esculpido+Preto')">
+                <div class="portfolio-img-wrapper">
+                    <img src="https://via.placeholder.com/600x450/E3DDD3/2B2A29?text=Lavatorio+Esculpido+Preto" alt="Lavatório Esculpido Preto">
+                </div>
+                <div class="portfolio-info">
+                    <span class="portfolio-tag">Lavatório Esculpido</span>
+                    <h3 class="portfolio-title">Cuba Esculpida com Ralo Oculto Preto</h3>
+                </div>
+            </div>
+
+            <!-- ITEM 3: SOBREPOR -->
+            <div class="portfolio-card item-category sobrepor" onclick="openModal('https://via.placeholder.com/800x600/E3DDD3/2B2A29?text=Bancada+de+Sobrepor+Marmorizada')">
+                <div class="portfolio-img-wrapper">
+                    <img src="https://via.placeholder.com/600x450/E3DDD3/2B2A29?text=Bancada+de+Sobrepor+Marmorizada" alt="Bancada de Sobrepor">
+                </div>
+                <div class="portfolio-info">
+                    <span class="portfolio-tag">Bancada de Sobrepor</span>
+                    <h3 class="portfolio-title">Bancada Marmorizada com Prateleira</h3>
+                </div>
+            </div>
+
+            <!-- ITEM 4: ESCULPIDO -->
+            <div class="portfolio-card item-category esculpidos" onclick="openModal('https://via.placeholder.com/800x600/E3DDD3/2B2A29?text=Lavatorio+Esculpido+Cinza')">
+                <div class="portfolio-img-wrapper">
+                    <img src="https://via.placeholder.com/600x450/E3DDD3/2B2A29?text=Lavatorio+Esculpido+Cinza" alt="Lavatório Esculpido Cinza">
+                </div>
+                <div class="portfolio-info">
+                    <span class="portfolio-tag">Lavatório Esculpido</span>
+                    <h3 class="portfolio-title">Lavatório Suspenso em Porcelanato Cinza</h3>
+                </div>
+            </div>
+
+            <!-- ITEM 5: SOBREPOR -->
+            <div class="portfolio-card item-category sobrepor" onclick="openModal('https://via.placeholder.com/800x600/E3DDD3/2B2A29?text=Bancada+Branca+de+Sobrepor')">
+                <div class="portfolio-img-wrapper">
+                    <img src="https://via.placeholder.com/600x450/E3DDD3/2B2A29?text=Bancada+Branca+de+Sobrepor" alt="Bancada de Sobrepor Branca">
+                </div>
+                <div class="portfolio-info">
+                    <span class="portfolio-tag">Bancada de Sobrepor</span>
+                    <h3 class="portfolio-title">Bancada Clean com Cuba de Louça</h3>
+                </div>
+            </div>
+
+            <!-- ITEM 6: ESCULPIDO -->
+            <div class="portfolio-card item-category esculpidos" onclick="openModal('https://via.placeholder.com/800x600/E3DDD3/2B2A29?text=Lavatorio+Marmorizado+Esculpido')">
+                <div class="portfolio-img-wrapper">
+                    <img src="https://via.placeholder.com/600x450/E3DDD3/2B2A29?text=Lavatorio+Marmorizado+Esculpido" alt="Lavatório Marmorizado">
+                </div>
+                <div class="portfolio-info">
+                    <span class="portfolio-tag">Lavatório Esculpido</span>
+                    <h3 class="portfolio-title">Cuba Esculpida Marmorizada Ouro</h3>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- MODAL PARA VER A IMAGEM EM TAMANHO GRANDE -->
+    <div id="imageModal" class="modal" onclick="closeModal()">
+        <span class="modal-close">&times;</span>
+        <img class="modal-content" id="imgModalTarget">
+    </div>
+
+    <!-- FOOTER / CONTATO -->
+    <footer id="contato">
+        <div class="footer-content">
+            <a href="#" class="logo-text">SEVEN<span>Pias em Porcelanato</span></a>
+            
+            <div class="contact-info">
+                <div class="contact-item">
+                    <i class="fab fa-whatsapp"></i>
+                    <span>(11) 94776-4616</span>
+                </div>
+                <div class="contact-item">
+                    <i class="fas fa-gem"></i>
+                    <span>Acabamentos de Precisão Sob Medida</span>
+                </div>
+            </div>
+
+            <a href="https://wa.me/5511947764616?text=Ol%C3%A1!%20Vim%20pelo%20site%20e%20gostaria%20de%20tirar%20duvidas." target="_blank" class="btn-primary">
+                Falar pelo WhatsApp
+            </a>
+
+            <div class="copyright">
+                &copy; SEVEN Pias em Porcelanato. Todos os direitos reservados.
+            </div>
+        </div>
+    </footer>
+
+    <!-- BOTÃO WHATSAPP FLUTUANTE -->
+    <a href="https://wa.me/5511947764616?text=Ol%C3%A1!%20Gostaria%20de%20fazer%20um%20or%C3%A7amento." class="whatsapp-float" target="_blank" title="Fale pelo WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- SCRIPTS -->
+    <script>
+        // Menu Mobile Toggle
+        const mobileMenu = document.getElementById('mobile-menu');
+        const navList = document.getElementById('nav-list');
+
+        mobileMenu.addEventListener('click', () => {
+            navList.classList.toggle('active');
+        });
+
+        // Filtro do Portfólio
+        function filterSelection(category) {
+            const cards = document.querySelectorAll('.item-category');
+            const buttons = document.querySelectorAll('.filter-btn');
+
+            // Atualiza o botão ativo
+            buttons.forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+
+            // Exibe/Oculta os cards
+            cards.forEach(card => {
+                if (category === 'todos') {
+                    card.style.display = 'block';
+                } else {
+                    if (card.classList.contains(category)) {
+                        card.style.display = 'block';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                }
+            });
+        }
+
+        // Modal de Imagem
+        function openModal(imageSrc) {
+            const modal = document.getElementById('imageModal');
+            const modalImg = document.getElementById('imgModalTarget');
+            modal.style.display = 'flex';
+            modalImg.src = imageSrc;
+        }
+
+        function closeModal() {
+            document.getElementById('imageModal').style.display = 'none';
+        }
+    </script>
+</body>
+</html>
