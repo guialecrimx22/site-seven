@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SE7EN - Pias em Porcelanato</title>
+    <title>SEVEN - Pias em Porcelanato</title>
     <meta name="description" content="PIAS E BANCADAS EXCLUSIVAS EM PORCELANATO. ACABAMENTOS PREMIUM COM DESIGN SEVEN.">
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -306,7 +306,7 @@
             z-index: 10;
         }
 
-        /* SEÇÃO DE FEEDBACKS / AVALIAÇÕES REAIS */
+        /* SEÇÃO DE FEEDBACKS */
         .feedback-grid {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
@@ -395,7 +395,7 @@
             font-size: 0.9rem;
         }
 
-        /* MODAL DE IMAGEM */
+        /* MODAL DE IMAGEM CORRIGIDO */
         .modal {
             display: none;
             position: fixed;
@@ -408,6 +408,7 @@
             justify-content: center;
             align-items: center;
             padding: 20px;
+            cursor: pointer;
         }
 
         .modal img {
@@ -415,6 +416,7 @@
             max-height: 85vh;
             border-radius: 6px;
             object-fit: contain;
+            cursor: default;
         }
 
         .modal-close {
@@ -422,8 +424,12 @@
             top: 20px;
             right: 25px;
             color: white;
-            font-size: 35px;
+            font-size: 40px;
+            font-weight: bold;
             cursor: pointer;
+            z-index: 2001;
+            user-select: none;
+            line-height: 1;
         }
 
         /* PAINEL ADMIN MODAL */
@@ -569,7 +575,7 @@
         </div>
     </section>
 
-    <!-- NOSSO TRABALHO (PORTFÓLIO) -->
+    <!-- NOSSO TRABALHO -->
     <section class="section-container" id="trabalhos">
         <h2 class="section-title">NOSSO TRABALHO</h2>
 
@@ -583,14 +589,12 @@
         <div class="portfolio-grid" id="portfolioGrid"></div>
     </section>
 
-    <!-- AVALIAÇÕES E FEEDBACKS REAIS -->
+    <!-- AVALIAÇÕES E FEEDBACKS -->
     <section class="section-container" id="feedbacks">
         <h2 class="section-title">O QUE NOSSOS CLIENTES DIZEM</h2>
 
-        <!-- LISTA DE AVALIAÇÕES REAIS -->
         <div class="feedback-grid" id="feedbackGrid"></div>
 
-        <!-- FORMULÁRIO PARA O CLIENTE ENVIAR AVALIAÇÃO + FOTO -->
         <div class="feedback-form-box">
             <h3>Deixe seu Feedback sobre nosso Trabalho</h3>
             
@@ -633,11 +637,11 @@
 
     <!-- MODAL DE IMAGEM -->
     <div class="modal" id="imageModal" onclick="closeImageModal()">
-        <span class="modal-close">&times;</span>
-        <img id="modalImgTarget" src="" alt="Ampliação">
+        <span class="modal-close" onclick="closeImageModal()">&times;</span>
+        <img id="modalImgTarget" src="" alt="Ampliação" onclick="event.stopPropagation()">
     </div>
 
-    <!-- PAINEL ADMINISTRADOR (GERENCIAR TUDO) -->
+    <!-- PAINEL ADMINISTRADOR -->
     <div class="admin-panel" id="adminPanel">
         <div class="admin-content">
             
@@ -710,7 +714,6 @@
             }
         }
 
-        // RENDERIZAR PORTFÓLIO
         function renderPortfolio(filter = 'todos') {
             const grid = document.getElementById('portfolioGrid');
             grid.innerHTML = '';
@@ -736,7 +739,6 @@
             });
         }
 
-        // RENDERIZAR AVALIAÇÕES REAIS
         function renderFeedbacks() {
             const grid = document.getElementById('feedbackGrid');
             grid.innerHTML = '';
@@ -776,7 +778,7 @@
             document.getElementById('imageModal').style.display = 'flex';
         }
 
-        function closeModal() {
+        function closeImageModal() {
             document.getElementById('imageModal').style.display = 'none';
         }
 
@@ -796,7 +798,6 @@
             document.getElementById('adminPanel').style.display = 'none';
         }
 
-        // NOVO FEEDBACK ENVIADO PELO CLIENTE
         function submitFeedback() {
             const author = document.getElementById('fbAuthor').value;
             const stars = parseInt(document.getElementById('fbStars').value);
@@ -839,7 +840,6 @@
             }
         }
 
-        // DELETAR FEEDBACK (APENAS MODO ADMIN)
         function deleteFeedback(id) {
             if (confirm("Deseja realmente apagar esta avaliação?")) {
                 feedbacks = feedbacks.filter(f => f.id !== id);
@@ -848,7 +848,6 @@
             }
         }
 
-        // ALTERAR BANNER
         function handleBannerUpload() {
             const bannerInput = document.getElementById('bannerFileInput');
             if (bannerInput.files.length === 0) {
@@ -866,7 +865,6 @@
             reader.readAsDataURL(bannerInput.files[0]);
         }
 
-        // NOVO PROJETO NO PORTFÓLIO
         function handleFileUpload() {
             const fileInput = document.getElementById('fileInput');
             const title = document.getElementById('newImgTitle').value;
@@ -900,7 +898,6 @@
             }
         }
 
-        // INICIALIZAÇÃO
         renderPortfolio();
         renderFeedbacks();
     </script>
